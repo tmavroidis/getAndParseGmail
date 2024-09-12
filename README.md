@@ -11,5 +11,8 @@ I redirected the email to a gmail acount that received the mail correctly, but n
 Not a trivial task, but after much trial and error I was able to put together a script that works.
 In order to automate gmail, the account has to have 2fa enabled and you need to create an app password.  https://support.google.com/mail/answer/185833?hl=en 
 Once that is done use your app password to access the account.
+
+Both Pace (https://www.ibm.com/docs/en/i/7.3?topic=i-installing-pase) and Expect (http://www.scottklement.com/expect/:) is required on the IBM i. 
+
 Create a folder off the home directory called gmail
 Create a physical file in your working library CRTPF FILE(<library>/TEMPSMS) RCDLEN(5000) 
