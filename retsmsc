@@ -1,0 +1,25 @@
+             PGM
+
+             DLYJOB     DLY(60) /* one minute */
+
+             DLTF       FILE(QTEMP/OUTFILE)
+             MONMSG     MSGID(CPF0000)
+
+             CHGCURDIR  DIR('/home/gmail')
+             RMVLNK     OBJLNK('/gmail/stat.txt')
+             monmsg     cpfa0a9
+
+             /* connect to gmail and get message header */
+             QSH        CMD('/QOpenSys/usr/bin/sh -c +
+                          "/home/gmail/sslexpect.sh > /home/gmail/stat.txt"')
+
+             CPYFRMSTMF FROMSTMF('/home/gmail/stat.txt') +
+                          TOMBR('/QSYS.LIB/<library>.LIB/TEMPSMS.FILE/tempsms.+
+                          mbr') MBROPT(*REPLACE)
+
+             call       retsmsgr
+
+             SBMJOB     CMD(CALL PGM(<library>/RETSMSC)) JOB(retsmsgmlc) +
+                          JOBQ(QS36EVOKE) USER(<validUser>)   LOG(0 0 *NOLIST)
+
+             ENDPGM            
