@@ -13,6 +13,7 @@ In order to automate gmail, the account has to have 2fa enabled and you need to 
 Once that is done use your app password to access the account.
 
 Both Pace (https://www.ibm.com/docs/en/i/7.3?topic=i-installing-pase) and Expect (http://www.scottklement.com/expect/:) is required on the IBM i. 
+To use twilio you need to setup an account with Twilio that gives you private keys. Twilio is a paid service per message sent. You can get everything going on a test account without incurring charges but will only be able to sent SMS messages to one phone #. Once you have the mechanism working then you can purchase the paid service.
 
 Create a folder off the home directory called gmail
 Create a physical file in your working library CRTPF FILE(<library>/TEMPSMS) RCDLEN(5000) 
